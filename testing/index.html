@@ -1,0 +1,1095 @@
+
+<!doctype HTML>
+<html>
+  <head>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css'>
+    <link rel='stylesheet' href='style.css'>
+    
+    <script src='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js' type='text/javascript'></script>
+    <script src='https://rawgithub.com/leaflet-extras/leaflet-providers/gh-pages/leaflet-providers.js' type='text/javascript'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    
+    <style>
+    body {
+      margin: 0px;
+      font-family: "Helvetica Neue"
+    }
+    /* Map */
+.rChart {
+  /* background-color: #08304a; */
+  position: absolute;
+	float: left;
+	top: 0.5%;
+	height: 98%;
+	width: 100%;
+	z-index: 7;
+}
+
+
+/* Sidebar */
+#sidebar {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	height: 96%;
+	width: 32%;
+	border: 1px solid #999;
+	/* background-color: #FFFFFF;
+	background-color:rgba(255, 255, 255,0.9); */
+  background-color: rgba(44,44,44,0.9);
+  color: #fff;
+	padding-left: 1%;
+	padding-right: 1%;
+	z-index: 10;
+  display: none;
+}
+#sidebar-content h3 {
+  color: darkslategray;
+  font-family: "Helvetica Neue"
+}
+p {
+  text-align: justify;
+}
+    </style>
+    
+  </head>
+  <body>
+    <div id='sidebar'>
+      <div id='sidebar-content'>
+        <h3>Sidebar</h3>
+       
+      </div>
+    </div>
+    <div id='chart59ca168cb619' class='rChart leaflet'></div>  
+    <div id="credits">
+  	<div id="credits_box">
+			<div id="credits_content">
+				 <span class="help-block">This is a submission for the <a href="http://applifyingusgsdata.challenge.gov/">USGS App Challenge</a></span>
+        <span class="help-block">Data sources: <a href="http://www.itis.gov/">ITIS</a>, 
+      						<a href="http://api.phylotastic.org/tnrs">Phylotastic</a>,
+    							<a href="http://www.issg.org/database/welcome/">Global Invasive Species Database</a>,
+    							<a href="http://phylodiversity.net/phylomatic/">Phylomatic</a>, and
+    							<a href="http://www.gbif.org/">GBIF</a></span>
+        <span class="help-block">Source code for this app available on <a href="https://github.com/ropensci/usgs_app">Github</a>. Created by rOpenSci. Vist <a href="http://ropensci.org/">our website</a> to explore our R packages and tutorials. Get the R packages: <a href="https://github.com/ropensci/taxize_">taxize</a>, 
+    							<a href="https://github.com/ropensci/rgbif">rgbif</a>.  This app was built using <a href="http://www.rstudio.com/shiny/">Shiny</a>.  We use <a href="http://phylodiversity.net/phylomatic/">Phylomatic</a> to 
+    							generate the phylogeny, so phylogenies are restricted to plants.</span>
+        <span class="help-block">Bugs? File them <a href="https://github.com/ropensci/usgs_app/issues">here</a></span>
+			</div>
+    	</div>
+    	<div id="toggle_credits" class="btn btn-inverse" type="button">Credits</div>
+	</div>
+  
+    
+    <script>
+  var spec = {
+ "dom": "chart59ca168cb619",
+"width":   1600,
+"height":    800,
+"urlTemplate": "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+"layerOpts": {
+ "attribution": "Map data<a href=\"http://openstreetmap.org\">OpenStreetMap</a>\n         contributors, Imagery<a href=\"http://mapbox.com\">MapBox</a>" 
+},
+"provider": "MapQuestOpen.OSM",
+"center": [     30,  -73.9 ],
+"zoom":      2,
+"features": [
+ {
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -76.75, 3.7667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": null,
+"institutionCode": "AMNH",
+"collectionCode": "Bird",
+"catalogNumber": "Skin-470489",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": "Raap",
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> NA <br/>\n<b> decimalLatitude : </b>   3.766667 <br/>\n<b> decimalLongitude : </b>  -76.75000 <br/>\n<b> institutionCode : </b> AMNH <br/>\n<b> collectionCode : </b> Bird <br/>\n<b> catalogNumber : </b> Skin-470489 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> Raap <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": null,
+"institutionCode": "KU",
+"collectionCode": "Birds",
+"catalogNumber": "93439",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": "Robbins, M.B.",
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> NA <br/>\n<b> decimalLatitude : </b>   5.266667 <br/>\n<b> decimalLongitude : </b>  -60.73333 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> Birds <br/>\n<b> catalogNumber : </b> 93439 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> Robbins, M.B. <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": null,
+"institutionCode": "KU",
+"collectionCode": "Birds",
+"catalogNumber": "93439",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": "Robbins, M.B.",
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> NA <br/>\n<b> decimalLatitude : </b>   5.266667 <br/>\n<b> decimalLongitude : </b>  -60.73333 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> Birds <br/>\n<b> catalogNumber : </b> 93439 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> Robbins, M.B. <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": null,
+"institutionCode": "KU",
+"collectionCode": "BirdsTissue",
+"catalogNumber": "3998",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": "Robbins, M.B.",
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> NA <br/>\n<b> decimalLatitude : </b>   5.266667 <br/>\n<b> decimalLongitude : </b>  -60.73333 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> BirdsTissue <br/>\n<b> catalogNumber : </b> 3998 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> Robbins, M.B. <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": null,
+"institutionCode": "KU",
+"collectionCode": "BirdsTissue",
+"catalogNumber": "3998",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": "Robbins, M.B.",
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> NA <br/>\n<b> decimalLatitude : </b>   5.266667 <br/>\n<b> decimalLongitude : </b>  -60.73333 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> BirdsTissue <br/>\n<b> catalogNumber : </b> 3998 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> Robbins, M.B. <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -59.017, -31.133 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": "Santa Elena County",
+"institutionCode": "YPM",
+"collectionCode": "ORN",
+"catalogNumber": "YPM ORN 065671",
+"basisOfRecordString": "S",
+"collector": "W. Partridge, P. S. Humphrey",
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> Santa Elena County <br/>\n<b> decimalLatitude : </b> -31.133300 <br/>\n<b> decimalLongitude : </b>  -59.01670 <br/>\n<b> institutionCode : </b> YPM <br/>\n<b> collectionCode : </b> ORN <br/>\n<b> catalogNumber : </b> YPM ORN 065671 <br/>\n<b> basisOfRecordString : </b> S <br/>\n<b> collector : </b> W. Partridge, P. S. Humphrey <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -65.596, -27.352 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": "Chicligasta",
+"institutionCode": "MACN",
+"collectionCode": "MACN-Or",
+"catalogNumber": "42228",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": null,
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> Chicligasta <br/>\n<b> decimalLatitude : </b> -27.352036 <br/>\n<b> decimalLongitude : </b>  -65.59611 <br/>\n<b> institutionCode : </b> MACN <br/>\n<b> collectionCode : </b> MACN-Or <br/>\n<b> catalogNumber : </b> 42228 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -54.523, -25.861 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": "Iguazú",
+"institutionCode": "MACN",
+"collectionCode": "MACN-Or",
+"catalogNumber": "38015",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": null,
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> Iguazú <br/>\n<b> decimalLatitude : </b> -25.861330 <br/>\n<b> decimalLongitude : </b>  -54.52345 <br/>\n<b> institutionCode : </b> MACN <br/>\n<b> collectionCode : </b> MACN-Or <br/>\n<b> catalogNumber : </b> 38015 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -54.356, -25.911 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": "Iguazú",
+"institutionCode": "MACN",
+"collectionCode": "MACN-Or",
+"catalogNumber": "38199",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": null,
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> Iguazú <br/>\n<b> decimalLatitude : </b> -25.911388 <br/>\n<b> decimalLongitude : </b>  -54.35609 <br/>\n<b> institutionCode : </b> MACN <br/>\n<b> collectionCode : </b> MACN-Or <br/>\n<b> catalogNumber : </b> 38199 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -65.596, -27.352 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": "Chicligasta",
+"institutionCode": "MACN",
+"collectionCode": "MACN-Or",
+"catalogNumber": "42229",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": null,
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> Chicligasta <br/>\n<b> decimalLatitude : </b> -27.352036 <br/>\n<b> decimalLongitude : </b>  -65.59611 <br/>\n<b> institutionCode : </b> MACN <br/>\n<b> collectionCode : </b> MACN-Or <br/>\n<b> catalogNumber : </b> 42229 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -54.523, -25.861 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": "Iguazú",
+"institutionCode": "MACN",
+"collectionCode": "MACN-Or",
+"catalogNumber": "39196",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": null,
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> Iguazú <br/>\n<b> decimalLatitude : </b> -25.861330 <br/>\n<b> decimalLongitude : </b>  -54.52345 <br/>\n<b> institutionCode : </b> MACN <br/>\n<b> collectionCode : </b> MACN-Or <br/>\n<b> catalogNumber : </b> 39196 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -65.596, -27.352 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"county": "Chicligasta",
+"institutionCode": "MACN",
+"collectionCode": "MACN-Or",
+"catalogNumber": "42227",
+"basisOfRecordString": "PreservedSpecimen",
+"collector": null,
+"fillColor": "red",
+"popup": "<b> taxonName : </b> Accipiter erythronemius <br/>\n<b> county : </b> Chicligasta <br/>\n<b> decimalLatitude : </b> -27.352036 <br/>\n<b> decimalLongitude : </b>  -65.59611 <br/>\n<b> institutionCode : </b> MACN <br/>\n<b> collectionCode : </b> MACN-Or <br/>\n<b> catalogNumber : </b> 42227 <br/>\n<b> basisOfRecordString : </b> PreservedSpecimen <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> red <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "23927 / 81781 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "KIMBALL HH",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  29.000000 <br/>\n<b> decimalLongitude : </b> -118.26700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 23927 / 81781 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> KIMBALL HH <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "ND",
+"collectionCode": "JFBM",
+"catalogNumber": "15648 / 16926 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ANTHONY AW",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  31.050000 <br/>\n<b> decimalLongitude : </b> -115.46700 <br/>\n<b> institutionCode : </b> ND <br/>\n<b> collectionCode : </b> JFBM <br/>\n<b> catalogNumber : </b> 15648 / 16926 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ANTHONY AW <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -108.4, 30.052 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "KU",
+"collectionCode": "KU",
+"catalogNumber": "36700 / 163720 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ND",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  30.052000 <br/>\n<b> decimalLongitude : </b> -108.39800 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> KU <br/>\n<b> catalogNumber : </b> 36700 / 163720 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ND <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "14655 / 81032 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ANTHONY AW",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  31.050000 <br/>\n<b> decimalLongitude : </b> -115.46700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 14655 / 81032 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ANTHONY AW <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -108.4, 30.052 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "KU",
+"collectionCode": "KU",
+"catalogNumber": "36693 / 163713 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ND",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  30.052000 <br/>\n<b> decimalLongitude : </b> -108.39800 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> KU <br/>\n<b> catalogNumber : </b> 36693 / 163713 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ND <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "WFVZ",
+"collectionCode": "WFVZ",
+"catalogNumber": "122 / 91697 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "HARRISON EN",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  29.000000 <br/>\n<b> decimalLongitude : </b> -118.26700 <br/>\n<b> institutionCode : </b> WFVZ <br/>\n<b> collectionCode : </b> WFVZ <br/>\n<b> catalogNumber : </b> 122 / 91697 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> HARRISON EN <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "23949 / 81803 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "KIMBALL HH",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  29.000000 <br/>\n<b> decimalLongitude : </b> -118.26700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 23949 / 81803 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> KIMBALL HH <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -101.23,   28.7 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "ND",
+"collectionCode": "JFBM",
+"catalogNumber": "12675 / 16928 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "DICKERMAN RW",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  28.700000 <br/>\n<b> decimalLongitude : </b> -101.23300 <br/>\n<b> institutionCode : </b> ND <br/>\n<b> collectionCode : </b> JFBM <br/>\n<b> catalogNumber : </b> 12675 / 16928 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> DICKERMAN RW <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -111.2,   31.2 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "28323 / 82537 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "WRIGHT JT",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  31.200000 <br/>\n<b> decimalLongitude : </b> -111.20000 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 28323 / 82537 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> WRIGHT JT <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "14652 / 81029 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ANTHONY AW",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  31.050000 <br/>\n<b> decimalLongitude : </b> -115.46700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 14652 / 81029 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ANTHONY AW <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -110.73, 31.175 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "KU",
+"collectionCode": "KU",
+"catalogNumber": "37162 / 167289 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ND",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  31.175000 <br/>\n<b> decimalLongitude : </b> -110.72700 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> KU <br/>\n<b> catalogNumber : </b> 37162 / 167289 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ND <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -108.4, 30.052 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "KU",
+"collectionCode": "KU",
+"catalogNumber": "36695 / 163715 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ND",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  30.052000 <br/>\n<b> decimalLongitude : </b> -108.39800 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> KU <br/>\n<b> catalogNumber : </b> 36695 / 163715 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ND <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -101.23,   28.7 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "ND",
+"collectionCode": "JFBM",
+"catalogNumber": "12673 / 16924 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "DICKERMAN RW",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  28.700000 <br/>\n<b> decimalLongitude : </b> -101.23300 <br/>\n<b> institutionCode : </b> ND <br/>\n<b> collectionCode : </b> JFBM <br/>\n<b> catalogNumber : </b> 12673 / 16924 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> DICKERMAN RW <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "23941 / 81795 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "KIMBALL HH",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  29.000000 <br/>\n<b> decimalLongitude : </b> -118.26700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 23941 / 81795 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> KIMBALL HH <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -109.89, 30.892 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "KU",
+"collectionCode": "KU",
+"catalogNumber": "6217 / 169584 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ND",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  30.892000 <br/>\n<b> decimalLongitude : </b> -109.89200 <br/>\n<b> institutionCode : </b> KU <br/>\n<b> collectionCode : </b> KU <br/>\n<b> catalogNumber : </b> 6217 / 169584 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ND <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -101.23,   28.7 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "ND",
+"collectionCode": "JFBM",
+"catalogNumber": "12674 / 16923 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "DICKERMAN RW",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  28.700000 <br/>\n<b> decimalLongitude : </b> -101.23300 <br/>\n<b> institutionCode : </b> ND <br/>\n<b> collectionCode : </b> JFBM <br/>\n<b> catalogNumber : </b> 12674 / 16923 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> DICKERMAN RW <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "12244 / 80553 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "BECK RH",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  29.000000 <br/>\n<b> decimalLongitude : </b> -118.26700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 12244 / 80553 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> BECK RH <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "23934 / 81788 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "KIMBALL HH",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  29.000000 <br/>\n<b> decimalLongitude : </b> -118.26700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 23934 / 81788 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> KIMBALL HH <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "23952 / 81806 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "KIMBALL HH",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  29.000000 <br/>\n<b> decimalLongitude : </b> -118.26700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 23952 / 81806 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> KIMBALL HH <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "Junco hyemalis",
+"county": "ND",
+"institutionCode": "UCLA",
+"collectionCode": "MVZ",
+"catalogNumber": "14654 / 81031 / E018",
+"basisOfRecordString": "Reportado",
+"collector": "ANTHONY AW",
+"fillColor": "green",
+"popup": "<b> taxonName : </b> Junco hyemalis <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  31.050000 <br/>\n<b> decimalLongitude : </b> -115.46700 <br/>\n<b> institutionCode : </b> UCLA <br/>\n<b> collectionCode : </b> MVZ <br/>\n<b> catalogNumber : </b> 14654 / 81031 / E018 <br/>\n<b> basisOfRecordString : </b> Reportado <br/>\n<b> collector : </b> ANTHONY AW <br/>\n<b> fillColor : </b> green <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -90.725,  33.74 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Bolivar",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS18167509",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Bolivar <br/>\n<b> decimalLatitude : </b>  33.739594 <br/>\n<b> decimalLongitude : </b>  -90.72467 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS18167509 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -81.735,   28.8 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Lake",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS17526752",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Lake <br/>\n<b> decimalLatitude : </b>  28.800253 <br/>\n<b> decimalLongitude : </b>  -81.73543 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS17526752 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -86.301, 41.695 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "St. Joseph",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS21134026",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> St. Joseph <br/>\n<b> decimalLatitude : </b>  41.695490 <br/>\n<b> decimalLongitude : </b>  -86.30062 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS21134026 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -81.408, 30.285 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Duval",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS18757091",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Duval <br/>\n<b> decimalLatitude : </b>  30.285086 <br/>\n<b> decimalLongitude : </b>  -81.40790 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS18757091 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -76.092, 36.834 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Virginia Beach",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS16645169",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Virginia Beach <br/>\n<b> decimalLatitude : </b>  36.834460 <br/>\n<b> decimalLongitude : </b>  -76.09182 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS16645169 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -96.747, 32.826 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Dallas",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS17495200",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Dallas <br/>\n<b> decimalLatitude : </b>  32.826084 <br/>\n<b> decimalLongitude : </b>  -96.74720 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS17495200 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -84.681, 37.173 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Pulaski",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS18141254",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Pulaski <br/>\n<b> decimalLatitude : </b>  37.173200 <br/>\n<b> decimalLongitude : </b>  -84.68110 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS18141254 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -84.209, 30.513 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Leon",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS18169622",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Leon <br/>\n<b> decimalLatitude : </b>  30.512800 <br/>\n<b> decimalLongitude : </b>  -84.20880 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS18169622 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -122.17, 39.526 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Glenn",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS21200074",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Glenn <br/>\n<b> decimalLatitude : </b>  39.525600 <br/>\n<b> decimalLongitude : </b> -122.16910 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS21200074 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -98.168, 29.742 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Comal",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS18730917",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Comal <br/>\n<b> decimalLatitude : </b>  29.742320 <br/>\n<b> decimalLongitude : </b>  -98.16762 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS18730917 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -80.117, 26.935 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Palm Beach",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS16683197",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Palm Beach <br/>\n<b> decimalLatitude : </b>  26.934810 <br/>\n<b> decimalLongitude : </b>  -80.11732 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS16683197 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -116.69, 43.663 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Canyon",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS18729577",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Canyon <br/>\n<b> decimalLatitude : </b>  43.663055 <br/>\n<b> decimalLongitude : </b> -116.68639 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS18729577 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -80.157, 41.982 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Erie",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS17527875",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Erie <br/>\n<b> decimalLatitude : </b>  41.981900 <br/>\n<b> decimalLongitude : </b>  -80.15700 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS17527875 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -80.55,  35.01 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Union",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS21130745",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Union <br/>\n<b> decimalLatitude : </b>  35.010258 <br/>\n<b> decimalLongitude : </b>  -80.54955 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS21130745 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -77.027, 38.892 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "District of Columbia",
+"institutionCode": "CLO",
+"collectionCode": "GBBC",
+"catalogNumber": "OBS18758511",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> District of Columbia <br/>\n<b> decimalLatitude : </b>  38.891900 <br/>\n<b> decimalLongitude : </b>  -77.02730 <br/>\n<b> institutionCode : </b> CLO <br/>\n<b> collectionCode : </b> GBBC <br/>\n<b> catalogNumber : </b> OBS18758511 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -73.167, 44.967 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Franklin",
+"institutionCode": "VCE",
+"collectionCode": "EBIRD_VT",
+"catalogNumber": "OBS22735138",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Franklin <br/>\n<b> decimalLatitude : </b>  44.966667 <br/>\n<b> decimalLongitude : </b>  -73.16667 <br/>\n<b> institutionCode : </b> VCE <br/>\n<b> collectionCode : </b> EBIRD_VT <br/>\n<b> catalogNumber : </b> OBS22735138 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -88.191, 42.311 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Lake",
+"institutionCode": "EBIRD_BCN",
+"collectionCode": "EBIRD_BCN",
+"catalogNumber": "OBS19399895",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Lake <br/>\n<b> decimalLatitude : </b>  42.311466 <br/>\n<b> decimalLongitude : </b>  -88.19140 <br/>\n<b> institutionCode : </b> EBIRD_BCN <br/>\n<b> collectionCode : </b> EBIRD_BCN <br/>\n<b> catalogNumber : </b> OBS19399895 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -87.712,  42.06 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Cook",
+"institutionCode": "EBIRD_BCN",
+"collectionCode": "EBIRD_BCN",
+"catalogNumber": "OBS16193863",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Cook <br/>\n<b> decimalLatitude : </b>  42.059800 <br/>\n<b> decimalLongitude : </b>  -87.71160 <br/>\n<b> institutionCode : </b> EBIRD_BCN <br/>\n<b> collectionCode : </b> EBIRD_BCN <br/>\n<b> catalogNumber : </b> OBS16193863 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -88.432, 41.873 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "Kane",
+"institutionCode": "EBIRD_BCN",
+"collectionCode": "EBIRD_BCN",
+"catalogNumber": "OBS13145867",
+"basisOfRecordString": "Observation",
+"collector": null,
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> Kane <br/>\n<b> decimalLatitude : </b>  41.872673 <br/>\n<b> decimalLongitude : </b>  -88.43245 <br/>\n<b> institutionCode : </b> EBIRD_BCN <br/>\n<b> collectionCode : </b> EBIRD_BCN <br/>\n<b> catalogNumber : </b> OBS13145867 <br/>\n<b> basisOfRecordString : </b> Observation <br/>\n<b> collector : </b> NA <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -98.103,  24.95 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"county": "ND",
+"institutionCode": "ND",
+"collectionCode": "ND",
+"catalogNumber": "not recorded / 254870 / E018",
+"basisOfRecordString": "Observado",
+"collector": "ND",
+"fillColor": "blue",
+"popup": "<b> taxonName : </b> Aix sponsa <br/>\n<b> county : </b> ND <br/>\n<b> decimalLatitude : </b>  24.950000 <br/>\n<b> decimalLongitude : </b>  -98.10300 <br/>\n<b> institutionCode : </b> ND <br/>\n<b> collectionCode : </b> ND <br/>\n<b> catalogNumber : </b> not recorded / 254870 / E018 <br/>\n<b> basisOfRecordString : </b> Observado <br/>\n<b> collector : </b> ND <br/>\n<b> fillColor : </b> blue <br/>" 
+} 
+} 
+],
+"id": "chart59ca168cb619" 
+}
+  var map = L.map(spec.dom)
+    .setView(spec.center, spec.zoom);
+
+    if (spec.provider){
+      L.tileLayer.provider(spec.provider).addTo(map)    
+    } else {
+  	  L.tileLayer(spec.urlTemplate, spec.layerOpts).addTo(map)
+    }
+     
+    
+    
+    
+    
+    
+    if (spec.circle2){
+      for (var c in spec.circle2){
+        var circle = L.circle(c.center, c.radius, c.opts)
+         .addTo(map);
+      }
+    }
+    
+    
+    
+    
+      L.geoJson(spec.features 
+        , 
+         {
+ "onEachFeature":  function(feature, layer){
+      layer.bindPopup(feature.properties.popup || feature.properties.taxonName)
+    } ,
+"pointToLayer":  function(feature, latlng){
+       return L.circleMarker(latlng, {
+        radius: 4,
+        fillColor: feature.properties.fillColor || 'red',    
+        color: '#000',
+        weight: 1,
+        fillOpacity: 0.8
+      })
+    }  
+}
+      ).addTo(map)
+</script>
+  </body>
+      <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  isVisibleDamage = true;
+  $('#toggle_credits').click(function(){
+    $('#credits_box').slideToggle('slow');
+	   if(isVisibleDamage){
+	   	$('#toggle_credits').html("Hide");
+		    isVisibleDamage = false;
+	    } else {
+		    $('#toggle_credits').html("Credits");
+		    isVisibleDamage = true;
+	    }
+  })
+});
+</script>
+</html>
