@@ -1,18 +1,18 @@
-toGeoJSON = function(list_){
+toGeoJSON = function(list_, lat = 'latitude', lon = 'longitude'){
   x = lapply(list_, function(l){
-    if (is.null(l$latitude) || is.null(l$longitude)){
+    if (is.null(l[[lat]]) || is.null(l[[lon]])){
       return(NULL)
     }
     list(
       type = 'Feature',
       geometry = list(
         type = 'Point',
-        coordinates = as.numeric(c(l$longitude, l$latitude))
+        coordinates = as.numeric(c(l[[lon]], l[[lat]]))
       ),
-      properties = l[!(names(l) %in% c('latitude', 'longitude'))]
+      properties = l[!(names(l) %in% c(lat, lon))]
     )
   })
-  Filter(function(x) !is.null(x), x)
+  setNames(Filter(function(x) !is.null(x), x), NULL)
 }
 
 bisonmap2 <- function(input = NULL, map_provider = 'MapQuestOpen.OSM', map_zoom = 4){
@@ -46,5 +46,5 @@ b1$save('bison.html', cdn = T)
 
 
 out2 <- bison(species = "Aquila chrysaetos", count = 600)
-b2 <- bisonmap2(out2, map_provider = 'Stamen.Toner')
+b2 <- bisonmap2(out2, map_provider = 'Stamen.TonerLite')
 b2$save('aquila.html', cdn = T)

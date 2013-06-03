@@ -1,0 +1,866 @@
+<!doctype HTML>
+<html>
+  <head>
+    <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css'>
+    
+    <script src='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js' type='text/javascript'></script>
+    <script src='https://rawgithub.com/leaflet-extras/leaflet-providers/gh-pages/leaflet-providers.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 1600px;
+      height: 800px;
+    }
+    body {
+      margin: 0;
+    }
+    </style>
+    
+  </head>
+  <body>
+    <div id='chart4c5f402bd188' class='rChart leaflet'></div>  
+    
+    <script>
+  var spec = {
+ "dom": "chart4c5f402bd188",
+"width":   1600,
+"height":    800,
+"urlTemplate": "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+"layerOpts": {
+ "attribution": "Map data<a href=\"http://openstreetmap.org\">OpenStreetMap</a>\n         contributors, Imagery<a href=\"http://mapbox.com\">MapBox</a>" 
+},
+"provider": "MapQuestOpen.OSM",
+"center": [     30,  -73.9 ],
+"zoom":      2,
+"features": [
+ {
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -54.356, -25.911 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Argentina",
+"catalogNumber": "38199",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -54.523, -25.861 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Argentina",
+"catalogNumber": "38015",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -65.596, -27.352 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Argentina",
+"catalogNumber": "42228",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -65.596, -27.352 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Argentina",
+"catalogNumber": "42229",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -65.596, -27.352 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Argentina",
+"catalogNumber": "42227",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -54.523, -25.861 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Argentina",
+"catalogNumber": "39196",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Guyana",
+"catalogNumber": "93439",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Guyana",
+"catalogNumber": "3998",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Guyana",
+"catalogNumber": "93439",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -60.733, 5.2667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Guyana",
+"catalogNumber": "3998",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -76.75, 3.7667 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "W. Colombia",
+"catalogNumber": "Skin-470489",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -59.017, -31.133 ] 
+},
+"properties": {
+ "taxonName": "Accipiter erythronemius",
+"country": "Argentina",
+"catalogNumber": "YPM ORN 065671",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "red" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -101.23,   28.7 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "12675 / 16928 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "14654 / 81031 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "23949 / 81803 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -110.73, 31.175 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "37162 / 167289 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "12244 / 80553 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "14655 / 81032 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "15648 / 16926 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "23952 / 81806 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "23941 / 81795 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "23927 / 81781 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "23934 / 81788 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -108.4, 30.052 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "36695 / 163715 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -108.4, 30.052 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "36693 / 163713 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -101.23,   28.7 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "12674 / 16923 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -115.47,  31.05 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "14652 / 81029 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -109.89, 30.892 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "6217 / 169584 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -111.2,   31.2 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "28323 / 82537 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -108.4, 30.052 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "36700 / 163720 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -101.23,   28.7 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "12673 / 16924 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -118.27,     29 ] 
+},
+"properties": {
+ "taxonName": "JUNCO HYEMALIS",
+"country": "MÉXICO",
+"catalogNumber": "122 / 91697 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": null 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -86.301, 41.695 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS21134026",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -80.117, 26.935 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS16683197",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -77.027, 38.892 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS18758511",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -90.725,  33.74 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS18167509",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -81.408, 30.285 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS18757091",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -116.69, 43.663 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS18729577",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -122.17, 39.526 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS21200074",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -84.681, 37.173 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS18141254",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -80.55,  35.01 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS21130745",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -81.735,   28.8 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS17526752",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -76.092, 36.834 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS16645169",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -98.168, 29.742 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS18730917",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -84.209, 30.513 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS18169622",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -96.747, 32.826 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS17495200",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -80.157, 41.982 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS17527875",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -87.712,  42.06 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS16193863",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -73.167, 44.967 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS22735138",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -88.432, 41.873 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS13145867",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -88.191, 42.311 ] 
+},
+"properties": {
+ "taxonName": "Aix sponsa",
+"country": "United States",
+"catalogNumber": "OBS19399895",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "blue" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [ -98.103,  24.95 ] 
+},
+"properties": {
+ "taxonName": "AIX SPONSA",
+"country": "MÉXICO",
+"catalogNumber": "not recorded / 254870 / E018",
+"earliestDateCollected": null,
+"latestDateCollected": null,
+"fillColor": "green" 
+} 
+} 
+],
+"id": "chart4c5f402bd188" 
+}
+  var map = L.map(spec.dom)
+    .setView(spec.center, spec.zoom);
+
+    if (spec.provider){
+      L.tileLayer.provider(spec.provider).addTo(map)    
+    } else {
+		  L.tileLayer(spec.urlTemplate, spec.layerOpts).addTo(map)
+    }
+     
+    
+    
+    
+    
+    
+    if (spec.circle2){
+      for (var c in spec.circle2){
+        var circle = L.circle(c.center, c.radius, c.opts)
+         .addTo(map);
+      }
+    }
+    
+    
+    
+    
+      L.geoJson(spec.features 
+        , 
+         {
+ "onEachFeature":  function(feature, layer){
+      layer.bindPopup(feature.properties.taxonName)
+    } ,
+"pointToLayer":  function(feature, latlng){
+       return L.circleMarker(latlng, {
+        radius: 4,
+        fillColor: feature.properties.fillColor || 'red',    
+        color: '#000',
+        weight: 1,
+        fillOpacity: 0.8
+      })
+    }  
+}
+      ).addTo(map)
+</script>
+    
+  </body>
+</html>
