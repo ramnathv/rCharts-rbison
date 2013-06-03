@@ -63,8 +63,6 @@ out2 <- out2[,c("taxonName","county","decimalLatitude","decimalLongitude",
     "institutionCode","collectionCode","catalogNumber","basisOfRecordString","collector")] 
 out2$taxonName <- capwords(out2$taxonName, onlyfirst=TRUE)
 
-
-
 mycolors = c('red', 'blue', 'green')
 out2 <- mutate(out2, 
   taxonName = as.factor(taxonName),
