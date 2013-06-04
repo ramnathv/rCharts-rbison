@@ -1,0 +1,114 @@
+
+<!doctype HTML>
+<html>
+  <head>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css'>
+    <link rel='stylesheet' href='style.css'>
+    
+    <script src='shared/jquery.js'></script>
+    <script src='shared/shiny.js'></script>
+    <script src='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js' type='text/javascript'></script>
+    <script src='https://rawgithub.com/leaflet-extras/leaflet-providers/gh-pages/leaflet-providers.js' type='text/javascript'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    
+    <style>
+    body {
+      margin: 0px;
+      font-family: "Helvetica Neue"
+    }
+    /* Map */
+.rChart {
+  /* background-color: #08304a; */
+  position: absolute;
+	float: left;
+	top: 0.5%;
+	height: 98%;
+	width: 100%;
+	z-index: 7;
+}
+
+
+/* Sidebar */
+#sidebar {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	height: 96%;
+	width: 32%;
+	border: 1px solid #999;
+	/* background-color: #FFFFFF;
+	background-color:rgba(255, 255, 255,0.9); */
+  background-color: rgba(44,44,44,0.9);
+  color: #fff;
+	padding-left: 1%;
+	padding-right: 1%;
+	z-index: 10;
+  display: none;
+}
+#inputbox {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  z-index: 10;
+}
+#sidebar-content h3 {
+  color: darkslategray;
+  font-family: "Helvetica Neue"
+}
+p {
+  text-align: justify;
+}
+    </style>
+    
+  </head>
+  <body>
+    <!--
+    <div id='sidebar'>
+      <div id='sidebar-content'>
+        <h3>Sidebar</h3>
+       
+      </div>
+    </div>
+    -->
+    <div id='inputbox'>
+      <input id='splist' type='text' placeholder='enter', value='Junco hyemalis'>
+    </div>  
+    <div id="credits">
+  	<div id="credits_box">
+			<div id="credits_content">
+				 <span class="help-block">This is a submission for the <a href="http://applifyingusgsdata.challenge.gov/">USGS App Challenge</a></span>
+        <span class="help-block">Data sources: <a href="http://www.itis.gov/">ITIS</a>, 
+      						<a href="http://api.phylotastic.org/tnrs">Phylotastic</a>,
+    							<a href="http://www.issg.org/database/welcome/">Global Invasive Species Database</a>,
+    							<a href="http://phylodiversity.net/phylomatic/">Phylomatic</a>, and
+    							<a href="http://www.gbif.org/">GBIF</a></span>
+        <span class="help-block">Source code for this app available on <a href="https://github.com/ropensci/usgs_app">Github</a>. Created by rOpenSci. Vist <a href="http://ropensci.org/">our website</a> to explore our R packages and tutorials. Get the R packages: <a href="https://github.com/ropensci/taxize_">taxize</a>, 
+    							<a href="https://github.com/ropensci/rgbif">rgbif</a>.  This app was built using <a href="http://www.rstudio.com/shiny/">Shiny</a>.  We use <a href="http://phylodiversity.net/phylomatic/">Phylomatic</a> to 
+    							generate the phylogeny, so phylogenies are restricted to plants.</span>
+        <span class="help-block">Bugs? File them <a href="https://github.com/ropensci/usgs_app/issues">here</a></span>
+			</div>
+    	</div>
+    	<div id="toggle_credits" class="btn btn-inverse" type="button">Credits</div>
+	</div>
+  <div id='wrapper' class='shiny-html-output'>
+  </div>
+    
+  </body>
+      <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  isVisibleDamage = true;
+  $('#toggle_credits').click(function(){
+    $('#credits_box').slideToggle('slow');
+	   if(isVisibleDamage){
+	   	$('#toggle_credits').html("Hide");
+		    isVisibleDamage = false;
+	    } else {
+		    $('#toggle_credits').html("Credits");
+		    isVisibleDamage = true;
+	    }
+  })
+});
+</script>
+</html>

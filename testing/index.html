@@ -44,6 +44,12 @@
 	z-index: 10;
   display: none;
 }
+#inputbox {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  z-index: 10;
+}
 #sidebar-content h3 {
   color: darkslategray;
   font-family: "Helvetica Neue"
@@ -55,13 +61,17 @@ p {
     
   </head>
   <body>
+    <!--
     <div id='sidebar'>
       <div id='sidebar-content'>
         <h3>Sidebar</h3>
        
       </div>
     </div>
-    <div id='chart59ca168cb619' class='rChart leaflet'></div>  
+    -->
+    <div id='inputbox'>
+      <input type='text' placeholder='enter'>
+    </div>  
     <div id="credits">
   	<div id="credits_box">
 			<div id="credits_content">
@@ -80,7 +90,7 @@ p {
     	<div id="toggle_credits" class="btn btn-inverse" type="button">Credits</div>
 	</div>
   
-    
+    <div id='chart59ca168cb619' class='rChart leaflet'></div>
     <script>
   var spec = {
  "dom": "chart59ca168cb619",
