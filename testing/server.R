@@ -31,8 +31,13 @@ shinyServer(function(input, output){
     if (is.null(mydata)){
       return()
     }
-    map2 = gbifmap2(mydata)$html('map')
+    map2 = gbifmap2(mydata, map_provider = input$provider)$html('map')
     h = paste(c('<div id="map" class="rChart leaflet"></div>', map2), collapse = '\n')
     HTML(h)
+  })
+  output$map_provider <- renderUI({
+    providers = c('Stamen.TonerLite', 'MapQuestOpen.OSM', 'OpenStreetMap.Mapnik',
+      'Esri.WorldStreetMap')
+    selectInput('provider', '', providers, selected = 'MapQuestOpen.OSM')
   })
 })
