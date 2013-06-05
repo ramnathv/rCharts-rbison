@@ -2,10 +2,16 @@
 <!doctype HTML>
 <html>
   <head>
+    
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css'>
+    <link rel='stylesheet' href='select2/select2.css'>
+   
     <link rel='stylesheet' href='style.css'>
+    <!--
     <link rel='stylesheet' href="typeahead.css">
+    -->
+    
     
     <script src='shared/jquery.js'></script>
     <script src='shared/shiny.js'></script>
@@ -105,8 +111,11 @@ p {
     
   </body>
       <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+      <!--
       <script src='typeahead.js' type='text/javascript'></script>
       <script src='app.js' type='text/javascript'></script>
+      -->
+      <script src='select2/select2.min.js' type='text/javascript'></script>
 <script>
 $(document).ready(function(){
   isVisibleDamage = true;
@@ -119,7 +128,9 @@ $(document).ready(function(){
 		    $('#toggle_credits').html("Credits");
 		    isVisibleDamage = true;
 	    }
-  })
+  });
+  
+  $("#splist").select2({tags:["Carpobrotus edulis", "Rosmarinus officinalis", "Ageratina riparia"]});
 });
 </script>
 </html>
