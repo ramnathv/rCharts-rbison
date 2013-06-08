@@ -1,13 +1,6 @@
 require(shiny)
 require(rCharts)
 
-mapOutput = function(outputId){
-  LIB <- get_lib('leaflet')
-  suppressMessages(singleton(addResourcePath(LIB$name, LIB$url)))
-  div(id = outputId, class = paste("shiny-html-output", basename(LIB$name)), 
-      tagList(get_assets_shiny(LIB)))
-}
-
 shinyUI(pageWithSidebar(
   headerPanel('Leaflet Maps'),
   sidebarPanel(

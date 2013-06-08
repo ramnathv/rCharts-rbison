@@ -2,7 +2,15 @@ require(shiny)
 require(plyr)
 require(rgbif)
 require(rCharts)
-shinyServer(function(input, output){
+shinyServer(function(input, output, session){
+  observe({
+    # We'll use the input$controller variable multiple times, so save it as x
+    # for convenience.
+    x <- input$controller
+    # This will change the value of input$inText, based on x
+    updateTextInput(session, "splist", input$splist)
+  })
+  
   getData <- reactive({
     if (is.null(input$splist) || input$splist == ""){
       return(NULL)
